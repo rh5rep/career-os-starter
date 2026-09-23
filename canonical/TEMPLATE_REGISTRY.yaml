@@ -1,0 +1,34 @@
+registry_version: '0.1-friend-pilot'
+purpose: Approved artifact assets for this candidate. The system maintains this after candidate confirmation; the candidate should not need to edit it manually.
+last_updated: null
+candidate_approved: false
+preserve_existing_good_format: true
+assets:
+  primary_resume:
+    status: NOT_REGISTERED
+    path_or_reference: null
+    format: null
+    approved_for: []
+    notes: null
+  optional_cv:
+    status: NOT_REGISTERED
+    path_or_reference: null
+    format: null
+    approved_for: []
+    notes: null
+  optional_cover_letter:
+    status: NOT_REGISTERED
+    path_or_reference: null
+    format: null
+    approved_for: []
+    notes: null
+  logos_or_media:
+    status: NOT_REGISTERED
+    path_or_reference: null
+    approved_for: []
+    notes: Only register these when the candidate's chosen document format actually uses them.
+status_vocabulary: [REGISTERED, NOT_REGISTERED, HOLD]
+rules:
+  - Do not force a universal Career Search OS visual design.
+  - Preserve an existing candidate-approved format when it remains suitable for the target.
+  - Do not use an unconfirmed template or media asset as approved.

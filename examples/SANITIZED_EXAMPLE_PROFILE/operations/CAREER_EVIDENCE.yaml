@@ -1,0 +1,72 @@
+ledger_version: 1
+as_of: '2026-09-23'
+principle: Synthetic example only. Every material claim traces to an example evidence
+  record.
+status_vocabulary:
+- VERIFIED
+- SUPPORTED
+- HOLD
+- UNKNOWN
+records:
+- id: EXP-COMMUNITY-OPS-SCHEDULING
+  status: VERIFIED
+  evidence_type: work
+  organization_or_context: Fictional community arts organization
+  title_or_role: Operations Coordinator
+  dates: 2024-01 to 2025-12
+  context: Staff scheduling and event operations
+  problem_objective: Keep weekly event staffing visible and reduce last-minute scheduling
+    confusion.
+  personal_contribution:
+  - Maintained a shared scheduling workbook used by 15 staff and updated shift coverage
+    for weekly events.
+  - Documented recurring handoff steps for event setup.
+  tools_methods:
+  - spreadsheets
+  - shared calendars
+  outcomes:
+  - Created a consistent scheduling record and clearer event handoffs.
+  metrics:
+  - Scheduling workbook used by 15 staff.
+  collaborators_or_stakeholders:
+  - program staff
+  - event volunteers
+  source_proof:
+  - Synthetic example interview notes
+  confidence_notes: Synthetic training example.
+  useful_for:
+  - operations coordinator
+  - business operations
+  not_justified:
+  - Led workforce operations.
+  - Owned staffing strategy or people management.
+  uncertainty: null
+- id: EXP-COMMUNITY-OPS-VENDORS
+  status: SUPPORTED
+  evidence_type: work
+  organization_or_context: Fictional community arts organization
+  title_or_role: Operations Coordinator
+  dates: 2024-01 to 2025-12
+  context: Vendor and event coordination
+  problem_objective: Coordinate routine vendor arrivals and event supplies.
+  personal_contribution:
+  - Confirmed delivery windows and maintained a vendor contact log.
+  tools_methods:
+  - email
+  - spreadsheets
+  outcomes:
+  - Improved visibility into routine event logistics.
+  metrics: []
+  collaborators_or_stakeholders:
+  - vendors
+  - program staff
+  source_proof:
+  - Synthetic example interview notes
+  confidence_notes: Synthetic training example.
+  useful_for:
+  - operations
+  - event coordination
+  not_justified:
+  - Negotiated vendor contracts.
+  - Owned procurement strategy.
+  uncertainty: No documented savings metric.

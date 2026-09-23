@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Portable Career OS Learning Proposal",
+  "type": "object",
+  "required": [
+    "proposal_id",
+    "scope",
+    "confidence",
+    "observation",
+    "population_sample",
+    "evidence",
+    "alternative_explanations",
+    "does_not_mean",
+    "proposed_change",
+    "validation_required",
+    "human_approval_status",
+    "automatic_rule_rewrite_allowed"
+  ],
+  "properties": {
+    "proposal_id": {
+      "type": "string"
+    },
+    "scope": {
+      "enum": [
+        "PORTABLE_SYSTEM",
+        "DOMAIN_SPECIFIC",
+        "CANDIDATE_SPECIFIC"
+      ]
+    },
+    "confidence": {
+      "enum": [
+        "SUPPORTED",
+        "SUGGESTIVE",
+        "UNKNOWN"
+      ]
+    },
+    "observation": {
+      "type": "string"
+    },
+    "population_sample": {
+      "type": "object"
+    },
+    "evidence": {
+      "type": "array"
+    },
+    "alternative_explanations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "does_not_mean": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "proposed_change": {
+      "type": "string"
+    },
+    "validation_required": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "human_approval_status": {
+      "enum": [
+        "PENDING",
+        "APPROVED",
+        "REJECTED",
+        "NEEDS_MORE_EVIDENCE"
+      ]
+    },
+    "automatic_rule_rewrite_allowed": {
+      "const": false
+    }
+  }
+}

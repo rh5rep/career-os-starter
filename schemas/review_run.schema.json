@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Portable Career OS Independent Review Run",
+  "type": "object",
+  "required": ["review_id", "opportunity_id", "reviewer_lens", "jd_derived_persona_basis", "strongest_signals", "concerns", "findings", "release_vote", "observations_are_factual_evidence"],
+  "properties": {
+    "review_id": {"type": "string", "minLength": 1},
+    "opportunity_id": {"type": "string", "minLength": 1},
+    "reviewer_lens": {"enum": ["RECRUITER", "HIRING_MANAGER", "DOMAIN_SPECIALIST"]},
+    "domain_specialist_label": {"type": ["string", "null"]},
+    "jd_derived_persona_basis": {"type": "string", "minLength": 1},
+    "strongest_signals": {"type": "array", "items": {"type": "string"}},
+    "concerns": {"type": "array", "items": {"type": "string"}},
+    "missing_or_weak_requirements": {"type": "array", "items": {"type": "string"}},
+    "likely_interview_questions": {"type": "array", "items": {"type": "string"}},
+    "findings": {"type": "array", "items": {"$ref": "#/$defs/finding"}},
+    "release_vote": {"enum": ["PASS", "REVISE", "HOLD"]},
+    "observations_are_factual_evidence": {"const": false}
+  },
+  "$defs": {
+    "finding": {"type": "object", "required": ["finding_id", "observation", "location", "disposition"], "properties": {"finding_id": {"type": "string"}, "observation": {"type": "string"}, "location": {"type": "string"}, "related_evidence_ids": {"type": "array", "items": {"type": "string"}}, "uncertainty": {"type": ["string", "null"]}, "disposition": {"enum": ["FIXED", "ACCEPTED_RISK", "NOT_APPLICABLE", "REJECTED_FINDING", "UNRESOLVED"]}}}
+  }
+}

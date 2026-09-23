@@ -1,0 +1,18 @@
+# Template Setup
+
+Career Search OS does not force one resume design across industries or candidates.
+
+During onboarding, provide or choose what you want the system to use:
+
+- **Primary resume template** — recommended if you already have a format you like.
+- **Optional CV template** — only if your field/geography benefits from a separate CV.
+- **Optional cover-letter template** — if you actually use one.
+- **Optional logos/media** — only if your document format genuinely uses them.
+
+Put user-supplied assets under `assets/user_templates/` or make them available to the connected workspace. The system records the approved asset in `canonical/TEMPLATE_REGISTRY.yaml`; you should not edit that file manually.
+
+If your existing resume format is good, preserve it. The system should tailor content to the target without replacing the visual identity merely because the framework has its own internal examples.
+
+A template is considered registered only after you confirm which asset should be used and for what purpose. Missing templates may stay `NOT_REGISTERED` without blocking profile setup.
+
+Missing templates also do not block discovery or triage. They do block automatic creation of a final application artifact: the system must pause and ask you to register or explicitly approve a format first. It must not silently create an “approved” design.

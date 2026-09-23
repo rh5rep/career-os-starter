@@ -1,0 +1,24 @@
+ledger_version: 1
+as_of: null
+principle: Every material applicant-facing career claim should trace to an evidence ID. Generated resume language is not proof.
+status_vocabulary: [VERIFIED, SUPPORTED, HOLD, UNKNOWN]
+records: []
+record_template:
+  id: EVIDENCE-EXAMPLE
+  status: UNKNOWN
+  evidence_type: work_experience
+  organization_or_context: null
+  title_or_role: null
+  dates: null
+  context: null
+  problem_objective: null
+  personal_contribution: []
+  tools_methods: []
+  outcomes: []
+  metrics: []
+  collaborators_or_stakeholders: []
+  source_proof: []
+  confidence_notes: null
+  useful_for: []
+  not_justified: []
+  uncertainty: null

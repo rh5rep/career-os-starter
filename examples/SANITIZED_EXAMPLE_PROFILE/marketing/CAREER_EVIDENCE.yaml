@@ -1,0 +1,71 @@
+ledger_version: 1
+as_of: '2026-09-23'
+principle: Synthetic example only. Every material claim traces to an example evidence
+  record.
+status_vocabulary:
+- VERIFIED
+- SUPPORTED
+- HOLD
+- UNKNOWN
+records:
+- id: EXP-NEWSLETTER-CAMPAIGNS
+  status: VERIFIED
+  evidence_type: work
+  organization_or_context: Fictional education nonprofit
+  title_or_role: Marketing Assistant
+  dates: 2025-02 to 2026-02
+  context: Email communications
+  problem_objective: Publish weekly updates to subscribers.
+  personal_contribution:
+  - Built weekly newsletter campaigns in Mailchimp from approved content and maintained
+    the send calendar.
+  - Prepared basic open/click reporting for the team.
+  tools_methods:
+  - Mailchimp
+  - spreadsheets
+  outcomes:
+  - Delivered consistent weekly campaign execution and recurring performance reports.
+  metrics: []
+  collaborators_or_stakeholders:
+  - communications manager
+  - program team
+  source_proof:
+  - Synthetic example campaign archive
+  confidence_notes: Synthetic training example.
+  useful_for:
+  - email marketing
+  - communications
+  - marketing operations
+  not_justified:
+  - Owned lifecycle marketing strategy.
+  - Set organization-wide brand strategy.
+  uncertainty: null
+- id: EXP-EVENT-CUSTOMER-RESEARCH
+  status: SUPPORTED
+  evidence_type: work
+  organization_or_context: Fictional education nonprofit
+  title_or_role: Marketing Assistant
+  dates: 2025-02 to 2026-02
+  context: Event feedback
+  problem_objective: Understand attendee experience after workshops.
+  personal_contribution:
+  - Compiled post-event survey responses and summarized recurring themes for the program
+    team.
+  tools_methods:
+  - survey tool
+  - spreadsheets
+  outcomes:
+  - Produced a recurring feedback summary used in program discussions.
+  metrics: []
+  collaborators_or_stakeholders:
+  - program team
+  - event attendees
+  source_proof:
+  - Synthetic interview notes
+  confidence_notes: Synthetic training example.
+  useful_for:
+  - customer insights
+  - marketing research
+  not_justified:
+  - Owned customer research strategy.
+  uncertainty: Exact survey response counts are not established.

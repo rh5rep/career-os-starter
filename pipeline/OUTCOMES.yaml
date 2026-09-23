@@ -1,0 +1,10 @@
+version: 1
+outcomes: []
+record_template:
+  opportunity_id: null
+  outcome: UNKNOWN
+  occurred_on: null
+  source: null
+  notes: null
+  causal_interpretation: UNKNOWN
+  learning_proposal_ids: []

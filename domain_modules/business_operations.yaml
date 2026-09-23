@@ -1,0 +1,27 @@
+module: business_operations
+version: '0.1'
+evidence_types:
+- process improvement
+- scheduling/capacity
+- vendor coordination
+- inventory/fulfillment
+- cross-functional execution
+- customer/client operations
+- reporting/analysis
+artifact_conventions:
+- prioritize scope, reliability, throughput, stakeholders, and measurable process
+  outcomes when supported
+- do not imply strategy or people-management ownership from coordination alone
+portfolio_expectations: Usually optional; work samples, process maps, dashboards,
+  SOPs, or case examples may help when the employer asks and confidentiality permits.
+specialist_reviewer: Senior operations or business-operations leader accountable for
+  the JD responsibilities.
+interview_formats:
+- behavioral
+- process/case exercise
+- prioritization scenario
+- spreadsheet/data exercise where role-relevant
+overstatement_risks:
+- coordinated does not automatically mean led
+- maintained a process does not automatically mean owned strategy
+- supported vendors does not automatically mean negotiated contracts

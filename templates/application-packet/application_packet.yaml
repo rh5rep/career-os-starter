@@ -1,0 +1,51 @@
+packet_version: "0.1"
+opportunity_id: null
+provenance:
+  source_commit_or_version: null
+  factual_authorities:
+    - canonical/CAREER_EVIDENCE.yaml
+    - canonical/CURRENT_STATE.yaml
+  prior_tailored_artifact_is_factual_authority: false
+target:
+  company: null
+  role: null
+  location: null
+  requisition: null
+  authoritative_jd:
+    url: null
+    retrieved_at: null
+    snapshot_reference: null
+human_decision: null  # PURSUE, PURSUE_AS_STRETCH, or HUMAN_OVERRIDE
+classification:
+  function_family: null
+  domain: null
+  seniority_fit: UNKNOWN
+  fit_tier: UNKNOWN
+  authorization_status: UNKNOWN
+form_preflight: []
+positioning:
+  primary: null
+  secondary: null
+  do_not_overstate: []
+requirements: []
+evidence_considered: []
+selected_evidence: []
+omitted_high_value_evidence: []
+content_plan:
+  artifact_profile: null
+  section_order: []
+  profile_or_summary_direction: null
+claims: []
+company_intelligence: []
+human_resonance: NOT_CONFIRMED
+reviews:
+  review_run_ids: []
+  disagreements: []
+  release_recommendation: NOT_REVIEWED
+  reviewer_observations_are_factual_evidence: false
+holds: []
+artifact_handoff:
+  document_profile: null
+  page_target: null
+  template_family: null
+  letter_decision: null

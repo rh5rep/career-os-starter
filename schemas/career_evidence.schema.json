@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Portable Career OS Evidence Ledger",
+  "type": "object",
+  "required": ["ledger_version", "principle", "status_vocabulary", "records"],
+  "properties": {
+    "ledger_version": {"type": "integer", "minimum": 1},
+    "as_of": {"type": ["string", "null"]},
+    "principle": {"type": "string", "minLength": 1},
+    "status_vocabulary": {
+      "type": "array",
+      "allOf": [
+        {"contains": {"const": "VERIFIED"}},
+        {"contains": {"const": "SUPPORTED"}},
+        {"contains": {"const": "HOLD"}},
+        {"contains": {"const": "UNKNOWN"}}
+      ]
+    },
+    "records": {"type": "array", "items": {"$ref": "#/$defs/evidence"}},
+    "record_template": {"type": "object"}
+  },
+  "$defs": {
+    "evidence": {
+      "type": "object",
+      "required": ["id", "status", "evidence_type", "personal_contribution", "source_proof", "not_justified"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^[A-Z]+-[A-Z0-9-]+$"},
+        "status": {"enum": ["VERIFIED", "SUPPORTED", "HOLD", "UNKNOWN"]},
+        "evidence_type": {"type": "string", "minLength": 1},
+        "organization_or_context": {"type": ["string", "null"]},
+        "title_or_role": {"type": ["string", "null"]},
+        "dates": {"type": ["string", "null"]},
+        "context": {"type": ["string", "null"]},
+        "problem_objective": {"type": ["string", "null"]},
+        "personal_contribution": {"type": "array", "items": {"type": "string"}},
+        "tools_methods": {"type": "array", "items": {"type": "string"}},
+        "outcomes": {"type": "array", "items": {"type": "string"}},
+        "metrics": {"type": "array", "items": {"type": "string"}},
+        "collaborators_or_stakeholders": {"type": "array", "items": {"type": "string"}},
+        "source_proof": {"type": "array", "items": {"type": "string"}},
+        "confidence_notes": {"type": ["string", "null"]},
+        "useful_for": {"type": "array", "items": {"type": "string"}},
+        "not_justified": {"type": "array", "items": {"type": "string"}},
+        "uncertainty": {"type": ["string", "null"]}
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+# Generated application artifacts and local scratch
+artifacts/
+tmp/
+.DS_Store
+__pycache__/
+*.pyc
+
+# Keep credentials/secrets out of the repository
+.env
+.env.*
+secrets/

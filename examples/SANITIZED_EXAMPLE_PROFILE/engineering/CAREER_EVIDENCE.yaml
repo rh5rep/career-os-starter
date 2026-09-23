@@ -1,0 +1,72 @@
+ledger_version: 1
+as_of: '2026-09-23'
+principle: Synthetic example only. Every material claim traces to an example evidence
+  record.
+status_vocabulary:
+- VERIFIED
+- SUPPORTED
+- HOLD
+- UNKNOWN
+records:
+- id: PRJ-LAB-DATA-LOGGER
+  status: VERIFIED
+  evidence_type: project
+  organization_or_context: Fictional university laboratory
+  title_or_role: Student Project
+  dates: '2025'
+  context: Bench data acquisition prototype
+  problem_objective: Collect repeated temperature and force measurements during benchtop
+    tests.
+  personal_contribution:
+  - Built a Python data-logging script and microcontroller interface for synchronized
+    measurements.
+  - Created a basic test checklist and plotted repeated trials for review.
+  tools_methods:
+  - Python
+  - microcontroller
+  - serial communication
+  - data visualization
+  outcomes:
+  - Produced repeatable bench-test data files and plots for the project team.
+  metrics: []
+  collaborators_or_stakeholders:
+  - student project team
+  source_proof:
+  - Synthetic project report
+  confidence_notes: Synthetic training example.
+  useful_for:
+  - test engineering
+  - embedded integration
+  - data acquisition
+  not_justified:
+  - Production deployment.
+  - Owned the laboratory test architecture.
+  uncertainty: null
+- id: PRJ-CAD-FIXTURE
+  status: SUPPORTED
+  evidence_type: project
+  organization_or_context: Fictional capstone team
+  title_or_role: Mechanical Contributor
+  dates: '2025'
+  context: Prototype fixture
+  problem_objective: Hold sample parts consistently during a class test.
+  personal_contribution:
+  - Modeled and iterated a small CAD fixture and prepared parts for 3D printing.
+  tools_methods:
+  - CAD
+  - 3D printing
+  outcomes:
+  - Supported repeatable sample placement in the prototype setup.
+  metrics: []
+  collaborators_or_stakeholders:
+  - capstone team
+  source_proof:
+  - Synthetic CAD files and interview notes
+  confidence_notes: Synthetic training example.
+  useful_for:
+  - mechanical prototyping
+  - test fixtures
+  not_justified:
+  - Production DFM ownership.
+  - CNC or injection-molding expertise.
+  uncertainty: null

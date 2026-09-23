@@ -1,0 +1,15 @@
+version: 1
+contacts: []
+record_template:
+  contact_id: CONTACT-EXAMPLE
+  name: null
+  organization: null
+  role: null
+  relationship_state: PROSPECT
+  context: null
+  why_relevant: null
+  smallest_useful_ask: null
+  outreach_state: NOT_SENT
+  last_interaction: null
+  next_action: null
+  review_date_or_trigger: null

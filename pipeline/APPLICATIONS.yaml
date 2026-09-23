@@ -1,0 +1,14 @@
+version: 1
+applications: []
+record_template:
+  application_id: APP-YYYYMMDD-COMPANY-ROLE
+  opportunity_id: null
+  human_decision: null
+  application_packet: null
+  prepared_artifacts: []
+  released_artifacts: []
+  submitted_artifacts: []
+  cover_letter_decision: null
+  networking_decision: null
+  submission_status: NOT_SUBMITTED
+  notes: null

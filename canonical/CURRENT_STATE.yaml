@@ -1,0 +1,34 @@
+as_of: null
+purpose: Fast-changing candidate state. ChatGPT should maintain this after explicit confirmation.
+status_vocabulary: [VERIFIED, SUPPORTED, HOLD, UNKNOWN, CONFLICT, SUPERSEDED]
+identity:
+  preferred_name: {value: null, status: UNKNOWN, source: null, last_verified: null}
+  full_name: {value: null, status: UNKNOWN, source: null, last_verified: null}
+  primary_email: {value: null, status: UNKNOWN, source: null, last_verified: null}
+  primary_phone: {value: null, status: UNKNOWN, source: null, last_verified: null}
+  current_city: {value: null, status: UNKNOWN, source: null, last_verified: null}
+  linkedin: {value: null, status: UNKNOWN, source: null, last_verified: null}
+  portfolio: {value: null, status: UNKNOWN, source: null, last_verified: null}
+  other_links: []
+availability:
+  employment_status: {value: null, status: UNKNOWN, source: null}
+  earliest_start: {value: null, status: UNKNOWN, source: null}
+  notice_period: {value: null, status: UNKNOWN, source: null}
+relocation:
+  open_to_relocation: {value: null, status: UNKNOWN, source: null}
+  notes: null
+work_authorization:
+  countries: []
+  sponsorship_needs:
+    value: null
+    status: UNKNOWN
+    source: null
+  rule: Never infer authorization in one country from residence, study, citizenship, or authorization in another country.
+active_constraints:
+  legal: []
+  geography: []
+  schedule: []
+  compensation: []
+  excluded_industries: []
+  other: []
+candidate_specific_checks: []

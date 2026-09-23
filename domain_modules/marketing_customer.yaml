@@ -1,0 +1,30 @@
+module: marketing_customer
+version: '0.1'
+evidence_types:
+- campaign execution
+- content/newsletters
+- CRM/customer communications
+- events
+- analytics/reporting
+- customer onboarding/support
+- sales enablement
+- research/segmentation
+artifact_conventions:
+- show audience, channel, personal contribution, evidence of performance, and experiment/learning
+  when supported
+- separate campaign execution from channel or lifecycle strategy ownership
+portfolio_expectations: Writing samples, campaign examples, case studies, creative
+  portfolio, customer playbooks, or analytics examples may be relevant depending on
+  role.
+specialist_reviewer: Senior marketing, growth, communications, customer success, implementation,
+  or channel leader derived from the JD.
+interview_formats:
+- behavioral
+- campaign/case exercise
+- writing task
+- role-play
+- portfolio/work-sample review
+overstatement_risks:
+- sent campaigns does not equal owned lifecycle strategy
+- supported accounts does not equal owned renewals
+- created content does not equal owned brand strategy

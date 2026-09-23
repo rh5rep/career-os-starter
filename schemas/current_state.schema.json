@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Portable Career OS Current State",
+  "type": "object",
+  "required": ["purpose", "status_vocabulary", "identity", "availability", "work_authorization", "active_constraints", "candidate_specific_checks"],
+  "properties": {
+    "as_of": {"type": ["string", "null"]},
+    "purpose": {"type": "string", "minLength": 1},
+    "status_vocabulary": {"type": "array", "contains": {"const": "UNKNOWN"}},
+    "identity": {"type": "object"},
+    "availability": {"type": "object"},
+    "relocation": {"type": "object"},
+    "work_authorization": {
+      "type": "object",
+      "required": ["countries", "sponsorship_needs", "rule"],
+      "properties": {
+        "countries": {"type": "array", "items": {"$ref": "#/$defs/authCountry"}},
+        "sponsorship_needs": {"type": "object"},
+        "rule": {"type": "string", "minLength": 1}
+      }
+    },
+    "active_constraints": {"type": "object"},
+    "candidate_specific_checks": {"type": "array", "items": {"type": "string"}}
+  },
+  "$defs": {
+    "authCountry": {
+      "type": "object",
+      "required": ["country", "status", "wording", "source"],
+      "properties": {
+        "country": {"type": "string", "minLength": 1},
+        "status": {"enum": ["VERIFIED", "SUPPORTED", "HOLD", "UNKNOWN", "CONFLICT"]},
+        "wording": {"type": ["string", "null"]},
+        "source": {"type": ["string", "null"]}
+      }
+    }
+  }
+}

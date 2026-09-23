@@ -1,0 +1,30 @@
+module: engineering_technical
+version: '0.1'
+evidence_types:
+- software
+- data/ML
+- hardware/mechanical
+- test/validation
+- systems integration
+- research
+- technical projects
+- production/deployment
+artifact_conventions:
+- make technical object, personal contribution, mechanism, scope, and result clear
+- separate prototype/coursework/research from production ownership
+- skills should trace to evidence
+portfolio_expectations: GitHub, portfolio, publications, demos, CAD/design examples,
+  or technical writing may help when relevant; none is universally required.
+specialist_reviewer: Senior engineer, technical principal, research lead, or other
+  technical specialist derived from the JD.
+interview_formats:
+- technical discussion
+- coding only when role-relevant
+- system/design discussion
+- debugging/tradeoff questions
+- portfolio/project deep dive
+overstatement_risks:
+- tool usage does not equal architecture ownership
+- coursework does not equal production experience
+- prototype does not equal validated production system
+- team outcome does not automatically equal individual metric ownership

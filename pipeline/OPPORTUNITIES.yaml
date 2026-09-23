@@ -1,0 +1,20 @@
+version: 1
+opportunities: []
+record_template:
+  opportunity_id: OPP-YYYYMMDD-COMPANY-ROLE
+  company: null
+  role: null
+  requisition: null
+  location: null
+  source_url: null
+  authoritative_jd_url: null
+  retrieved_at: null
+  jd_snapshot_reference: null
+  workflow_state: ACTIVE
+  process_stage: DISCOVERED
+  triage_recommendation: null
+  human_decision: null
+  next_action: null
+  waiting_for: null
+  review_date_or_trigger: null
+  notes: null

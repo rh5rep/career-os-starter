@@ -1,0 +1,432 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Portable Career OS Application Packet",
+  "type": "object",
+  "required": [
+    "packet_version",
+    "opportunity_id",
+    "provenance",
+    "target",
+    "classification",
+    "form_preflight",
+    "human_decision",
+    "positioning",
+    "requirements",
+    "evidence_considered",
+    "selected_evidence",
+    "omitted_high_value_evidence",
+    "content_plan",
+    "reviews",
+    "artifact_handoff",
+    "holds"
+  ],
+  "properties": {
+    "packet_version": {
+      "const": "0.1"
+    },
+    "opportunity_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "source_commit_or_version",
+        "factual_authorities",
+        "prior_tailored_artifact_is_factual_authority"
+      ],
+      "properties": {
+        "source_commit_or_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "factual_authorities": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "string"
+          }
+        },
+        "prior_tailored_artifact_is_factual_authority": {
+          "const": false
+        }
+      }
+    },
+    "target": {
+      "type": "object",
+      "required": [
+        "company",
+        "role",
+        "location",
+        "authoritative_jd"
+      ],
+      "properties": {
+        "company": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string"
+        },
+        "location": {
+          "type": "string"
+        },
+        "requisition": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "authoritative_jd": {
+          "type": "object"
+        }
+      }
+    },
+    "classification": {
+      "type": "object",
+      "required": [
+        "function_family",
+        "domain",
+        "seniority_fit",
+        "authorization_status"
+      ],
+      "properties": {
+        "function_family": {
+          "type": "string"
+        },
+        "domain": {
+          "type": "string"
+        },
+        "company_environment": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "seniority_fit": {
+          "enum": [
+            "ALIGNED",
+            "PARTIAL",
+            "MISALIGNED",
+            "UNKNOWN"
+          ]
+        },
+        "authorization_status": {
+          "enum": [
+            "VERIFIED",
+            "SUPPORTED",
+            "HOLD",
+            "UNKNOWN",
+            "NOT_APPLICABLE"
+          ]
+        }
+      }
+    },
+    "form_preflight": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/preflight"
+      }
+    },
+    "human_decision": {
+      "enum": [
+        "PURSUE",
+        "PURSUE_AS_STRETCH",
+        "HUMAN_OVERRIDE"
+      ]
+    },
+    "positioning": {
+      "type": "object",
+      "required": [
+        "primary",
+        "do_not_overstate"
+      ],
+      "properties": {
+        "primary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "secondary": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "do_not_overstate": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "requirements": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/requirement"
+      }
+    },
+    "evidence_considered": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/evidenceDecision"
+      }
+    },
+    "selected_evidence": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "pattern": "^[A-Z]+-[A-Z0-9-]+$"
+      }
+    },
+    "omitted_high_value_evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "evidence_id",
+          "reason"
+        ],
+        "properties": {
+          "evidence_id": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "content_plan": {
+      "type": "object"
+    },
+    "company_intelligence": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "human_resonance": {
+      "enum": [
+        "CONFIRMED",
+        "NOT_CONFIRMED",
+        "NOT_NEEDED"
+      ]
+    },
+    "reviews": {
+      "type": "object",
+      "required": [
+        "review_run_ids",
+        "release_recommendation",
+        "reviewer_observations_are_factual_evidence"
+      ],
+      "properties": {
+        "review_run_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "release_recommendation": {
+          "enum": [
+            "NOT_REVIEWED",
+            "READY_FOR_ARTIFACT",
+            "REVISE",
+            "HOLD"
+          ]
+        },
+        "reviewer_observations_are_factual_evidence": {
+          "const": false
+        },
+        "disagreements": {
+          "type": "array"
+        }
+      }
+    },
+    "artifact_handoff": {
+      "type": "object",
+      "required": [
+        "document_profile",
+        "page_target",
+        "template_family"
+      ],
+      "properties": {
+        "document_profile": {
+          "type": "string"
+        },
+        "page_target": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "template_family": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "letter_decision": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "holds": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/hold"
+      }
+    }
+  },
+  "$defs": {
+    "preflight": {
+      "type": "object",
+      "required": [
+        "type",
+        "status"
+      ],
+      "properties": {
+        "type": {
+          "enum": [
+            "COVER_LETTER",
+            "SHORT_ANSWER",
+            "SALARY",
+            "WORK_AUTHORIZATION",
+            "SPONSORSHIP",
+            "RELOCATION",
+            "TRAVEL",
+            "YEARS_EXPERIENCE",
+            "LEGAL_ATTESTATION",
+            "ASSESSMENT",
+            "PORTFOLIO",
+            "TRANSCRIPT",
+            "REFERENCE",
+            "UPLOAD",
+            "DEADLINE",
+            "OTHER"
+          ]
+        },
+        "status": {
+          "enum": [
+            "REQUIRED",
+            "OPTIONAL",
+            "NOT_FOUND",
+            "UNKNOWN",
+            "NEEDS_HUMAN_ANSWER"
+          ]
+        },
+        "source": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "details": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "requirement": {
+      "type": "object",
+      "required": [
+        "id",
+        "text",
+        "importance",
+        "coverage"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "importance": {
+          "enum": [
+            "MUST_HAVE",
+            "IMPORTANT",
+            "PREFERRED",
+            "UNKNOWN"
+          ]
+        },
+        "coverage": {
+          "enum": [
+            "STRONG",
+            "PARTIAL",
+            "GAP",
+            "HOLD",
+            "UNKNOWN"
+          ]
+        },
+        "evidence_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "evidenceDecision": {
+      "type": "object",
+      "required": [
+        "evidence_id",
+        "decision",
+        "reason"
+      ],
+      "properties": {
+        "evidence_id": {
+          "type": "string"
+        },
+        "decision": {
+          "enum": [
+            "SELECTED",
+            "OMITTED_WITH_REASON",
+            "NOT_RELEVANT",
+            "HOLD"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        }
+      }
+    },
+    "hold": {
+      "type": "object",
+      "required": [
+        "type",
+        "issue",
+        "owner",
+        "resolution_trigger"
+      ],
+      "properties": {
+        "type": {
+          "enum": [
+            "FACTUAL",
+            "LEGAL",
+            "COMPENSATION",
+            "POSITIONING",
+            "APPLICATION_FORM",
+            "OTHER"
+          ]
+        },
+        "issue": {
+          "type": "string"
+        },
+        "owner": {
+          "type": "string"
+        },
+        "resolution_trigger": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

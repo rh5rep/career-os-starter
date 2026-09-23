@@ -1,0 +1,52 @@
+version: '0.1-friend-pilot'
+purpose: Internal router for the Career Search OS Friend Pilot. Normal users interact through natural language or the four user_actions entry points.
+front_door:
+  skill: .agents/skills/career-os-coordinator/SKILL.md
+  user_actions:
+    - user_actions/START.md
+    - user_actions/FIND_OPPORTUNITIES.md
+    - user_actions/BUILD_APPLICATIONS.md
+    - user_actions/RECORD_UPDATE.md
+canonical_skill_root: .agents/skills
+routes:
+  SETUP:
+    coordinator: .agents/skills/career-os-coordinator/SKILL.md
+  DISCOVERY:
+    coordinator: .agents/skills/career-os-coordinator/SKILL.md
+    specialist: .agents/skills/opportunity-strategy/SKILL.md
+  TRIAGE:
+    skill: .agents/skills/opportunity-strategy/SKILL.md
+  APPLICATION:
+    sequence:
+      - .agents/skills/opportunity-strategy/SKILL.md
+      - .agents/skills/application-compiler/SKILL.md
+      - .agents/skills/application-review/SKILL.md
+      - .agents/skills/artifact-build/SKILL.md
+  NETWORKING:
+    coordinator: .agents/skills/career-os-coordinator/SKILL.md
+    internal_references:
+      - prompts/applications/NETWORKING_DECISION.md
+      - prompts/process/THANK_YOU_FOLLOW_UP.md
+  INTERVIEW:
+    coordinator: .agents/skills/career-os-coordinator/SKILL.md
+    internal_references:
+      - prompts/process/RECRUITER_SCREEN_PREP.md
+      - prompts/process/INTERVIEW_PREP.md
+  CLOSEOUT:
+    skill: .agents/skills/process-closeout/SKILL.md
+  SYSTEM_MAINTENANCE:
+    coordinator: .agents/skills/career-os-coordinator/SKILL.md
+contracts:
+  current_state: schemas/current_state.schema.json
+  career_evidence: schemas/career_evidence.schema.json
+  opportunity: schemas/opportunity.schema.json
+  application_packet: schemas/application_packet.schema.json
+  review_run: schemas/review_run.schema.json
+  process_event: schemas/process_event.schema.json
+  workflow_issue: schemas/workflow_issue.schema.json
+  learning_proposal: schemas/learning_proposal.schema.json
+notes:
+  - The user should not need to inspect this file during normal use.
+  - Skills define procedure; canonical files define candidate facts.
+  - Domain modules customize conventions but do not override exact JDs or canonical evidence.
+  - The three-reviewer configuration is a friend-pilot default to be evaluated, not a permanent universal requirement.

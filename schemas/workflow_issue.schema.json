@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Portable Career OS Workflow Issue",
+  "type": "object",
+  "required": [
+    "issue_id",
+    "observed_on",
+    "observation",
+    "reproducibility",
+    "scope",
+    "proposed_impact",
+    "status"
+  ],
+  "properties": {
+    "issue_id": {
+      "type": "string"
+    },
+    "observed_on": {
+      "type": "string",
+      "format": "date"
+    },
+    "observation": {
+      "type": "string"
+    },
+    "reproducibility": {
+      "enum": [
+        "REPRODUCIBLE",
+        "NOT_REPRODUCED",
+        "UNKNOWN"
+      ]
+    },
+    "scope": {
+      "enum": [
+        "CANDIDATE_SPECIFIC",
+        "DOMAIN_SPECIFIC",
+        "PORTABLE_SYSTEM"
+      ]
+    },
+    "proposed_impact": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "PENDING",
+        "APPROVED",
+        "REJECTED",
+        "NEEDS_MORE_EVIDENCE"
+      ]
+    },
+    "linked_learning_proposal": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  }
+}

@@ -1,0 +1,156 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Portable Career OS Opportunity",
+  "type": "object",
+  "required": [
+    "opportunity_id",
+    "company",
+    "role",
+    "location",
+    "authoritative_jd",
+    "workflow_state",
+    "process_stage"
+  ],
+  "properties": {
+    "opportunity_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "company": {
+      "type": "string",
+      "minLength": 1
+    },
+    "role": {
+      "type": "string",
+      "minLength": 1
+    },
+    "requisition": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "location": {
+      "type": "string",
+      "minLength": 1
+    },
+    "authoritative_jd": {
+      "type": "object",
+      "required": [
+        "url",
+        "retrieved_at",
+        "snapshot_reference"
+      ],
+      "properties": {
+        "url": {
+          "type": "string",
+          "minLength": 1
+        },
+        "retrieved_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "snapshot_reference": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "workflow_state": {
+      "enum": [
+        "ACTIVE",
+        "WAITING",
+        "DONE",
+        "DROPPED"
+      ]
+    },
+    "process_stage": {
+      "enum": [
+        "DISCOVERED",
+        "DECIDING",
+        "PREPARING_APPLICATION",
+        "SUBMITTED",
+        "RECRUITER_CONTACT",
+        "SCREEN",
+        "ASSESSMENT",
+        "INTERVIEW",
+        "FINAL_STAGE",
+        "REFERENCE_CHECK",
+        "OFFER",
+        "CLOSED",
+        "UNKNOWN"
+      ]
+    },
+    "triage_recommendation": {
+      "enum": [
+        "PURSUE",
+        "PURSUE_AS_STRETCH",
+        "NETWORK_WATCH",
+        "SKIP",
+        "UNKNOWN",
+        null
+      ]
+    },
+    "human_decision": {
+      "enum": [
+        "PURSUE",
+        "PURSUE_AS_STRETCH",
+        "NETWORK_WATCH",
+        "SKIP",
+        "HUMAN_OVERRIDE",
+        null
+      ]
+    },
+    "waiting_for": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "review_date_or_trigger": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "next_action": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "workflow_state": {
+            "const": "WAITING"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "waiting_for",
+          "review_date_or_trigger"
+        ],
+        "properties": {
+          "waiting_for": {
+            "type": "string",
+            "minLength": 1
+          },
+          "review_date_or_trigger": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  ]
+}

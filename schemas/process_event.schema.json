@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Portable Career OS Process Event",
+  "type": "object",
+  "required": ["event_id", "event_type", "opportunity_id", "occurred_on", "human_confirmed"],
+  "properties": {
+    "event_id": {"type": "string", "minLength": 1},
+    "event_type": {"enum": ["SAVED", "TRIAGED", "HUMAN_DECISION", "SUBMITTED", "RECRUITER_CONTACT", "SCREEN_SCHEDULED", "SCREEN_COMPLETED", "ASSESSMENT_RECEIVED", "ASSESSMENT_COMPLETED", "INTERVIEW_SCHEDULED", "INTERVIEW_COMPLETED", "FINAL_STAGE_SCHEDULED", "FINAL_STAGE_COMPLETED", "REFERENCE_CHECK", "REJECTED", "WITHDRAWN", "ROLE_CLOSED", "OFFER_RECEIVED", "OFFER_ACCEPTED", "OFFER_DECLINED", "STATE_CHANGED", "CLOSEOUT_UPDATED"]},
+    "opportunity_id": {"type": "string", "minLength": 1},
+    "occurred_on": {"type": "string", "format": "date"},
+    "human_confirmed": {"type": "boolean"},
+    "source": {"type": ["string", "null"]},
+    "materials": {"type": "array", "items": {"type": "string"}},
+    "confirmation": {"type": ["boolean", "null"]},
+    "workflow_state_after": {"enum": ["ACTIVE", "WAITING", "DONE", "DROPPED", null]},
+    "process_stage_after": {"enum": ["DISCOVERED", "DECIDING", "PREPARING_APPLICATION", "SUBMITTED", "RECRUITER_CONTACT", "SCREEN", "ASSESSMENT", "INTERVIEW", "FINAL_STAGE", "REFERENCE_CHECK", "OFFER", "CLOSED", "UNKNOWN", null]},
+    "waiting_for": {"type": ["string", "null"]},
+    "review_date": {"type": ["string", "null"]},
+    "review_trigger": {"type": ["string", "null"]},
+    "next_action": {"type": ["string", "null"]},
+    "notes": {"type": ["string", "null"]}
+  },
+  "allOf": [
+    {"if": {"properties": {"event_type": {"const": "SUBMITTED"}}}, "then": {"required": ["materials", "confirmation", "workflow_state_after", "next_action"], "properties": {"human_confirmed": {"const": true}, "confirmation": {"const": true}, "materials": {"minItems": 1}}}},
+    {"if": {"properties": {"workflow_state_after": {"const": "WAITING"}}}, "then": {"required": ["waiting_for"], "anyOf": [{"required": ["review_date"]}, {"required": ["review_trigger"]}]}}
+  ]
+}
