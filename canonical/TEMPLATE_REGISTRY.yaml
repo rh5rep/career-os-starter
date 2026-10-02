@@ -10,18 +10,21 @@ assets:
     format: null
     approved_for: []
     notes: null
+    structural_fingerprint: {status: NOT_REGISTERED, fingerprint_path: null, source_sha256: null, approved_render_reference: null, last_validated: null, validation_version: null}
   optional_cv:
     status: NOT_REGISTERED
     path_or_reference: null
     format: null
     approved_for: []
     notes: null
+    structural_fingerprint: {status: NOT_REGISTERED, fingerprint_path: null, source_sha256: null, approved_render_reference: null, last_validated: null, validation_version: null}
   optional_cover_letter:
     status: NOT_REGISTERED
     path_or_reference: null
     format: null
     approved_for: []
     notes: null
+    structural_fingerprint: {status: NOT_REGISTERED, fingerprint_path: null, source_sha256: null, approved_render_reference: null, last_validated: null, validation_version: null}
   logos_or_media:
     status: NOT_REGISTERED
     path_or_reference: null
@@ -32,3 +35,10 @@ rules:
   - Do not force a universal Career Search OS visual design.
   - Preserve an existing candidate-approved format when it remains suitable for the target.
   - Do not use an unconfirmed template or media asset as approved.
+  - A registered DOCX requires a fingerprint generated from its exact source bytes; rerun registration when the source hash changes.
+release_requirements:
+  structural_qa: true
+  ats_qa: true
+  visual_qa: true
+  semantic_qa: true
+  canary_required_on_change: true

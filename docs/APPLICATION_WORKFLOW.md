@@ -14,7 +14,7 @@
 | Compile | Build semantic content | All above | Application packet | Resume-first drafting | No |
 | Independent review | Challenge draft | Same verified bundle | Findings/dispositions | Self-approval | Accepted risks/holds |
 | Artifact build | Render reviewed content | Packet + template | DOCX/PDF/etc. | Strategy changes during layout | **Artifact release** |
-| ATS/text + visual QA | Verify machine/human quality | Artifact | QA result | Only checking appearance | Release if unresolved |
+| Structural + ATS/text + visual QA | Verify exact final files against the registered template and each rendered page | Artifact + template fingerprint | Hash-bound QA result | Contact-sheet-only or parser-only approval | Release if any gate unresolved |
 | Networking/letter | Decide extra conversion work | Context/resonance | Decision/draft | Generic mass outreach | **Send** |
 | Submission | External action | Approved materials/form | Confirmed event | Inferring from files | **Submit** |
 | Closeout | Preserve process truth | Confirmation | Event/state/next action | “Applied” as vague state | No |

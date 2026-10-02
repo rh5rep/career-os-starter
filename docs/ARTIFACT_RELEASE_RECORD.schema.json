@@ -1,0 +1,15 @@
+{
+  "description": "Minimum hash-bound release evidence. Fields are checked by scripts/verify_artifact_release.py; independent review remains a human gate.",
+  "example": {
+    "files": {
+      "template": {"path": "template.docx", "sha256": "..."},
+      "docx": {"path": "resume.docx", "sha256": "..."},
+      "pdf": {"path": "resume.pdf", "sha256": "..."}
+    },
+    "semantic_qa": {"result": "PASS", "artifact_sha256": "...", "reviewer": "..."},
+    "structural_qa": {"result": "PASS", "artifact_sha256": "...", "template_sha256": "...", "validator_version": "1.0", "findings": []},
+    "ats_qa": {"result": "PASS", "artifact_sha256": "...", "extraction_sha256": "..."},
+    "visual_qa": {"result": "PASS", "pdf_sha256": "...", "inspection_mode": "INDIVIDUAL_FULL_PAGE", "template_reference_sha256": "...", "pdf_page_count": 1, "rendered_pages": [{"path": "page-1.png", "sha256": "...", "inspected_individually": true}], "findings": [], "reviewer": "...", "timestamp": "..."},
+    "batch": {"canary": {"result": "PASS", "artifact_sha256": "...", "approved_at": "..."}, "fanout_started_at": "..."}
+  }
+}

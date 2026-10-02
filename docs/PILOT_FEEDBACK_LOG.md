@@ -59,3 +59,13 @@ The portable system is being built while the source Career Search V2.5 pilot is 
 - **Status:** APPROVED
 - **Human decision / date:** approved in pilot simplification pass, 2026-09-23.
 - **Follow-up validation:** track overrides separately from system-recommended pursuit so later learning does not erase the decision provenance.
+### PF-2026-10-01-005 — Template structure survives text clearing
+- **Observation:** an external 20-artifact batch preserved readable text but displaced labels because a generator retained a template tab and appended new text after it.
+- **Source / context:** submitted September 30 batch, approved source DOCX, and October 1 structural reproduction.
+- **Reproducible?** YES; sanitized OOXML regression fixture fails the new validator.
+- **Scope:** PORTABLE_SYSTEM
+- **Proposed portable-system impact:** template-derived structural comparison, individual-page render QA, hash-bound release evidence, and a passing canary before fan-out on any changed template/build/render/media path.
+- **Alternative explanations:** none for the reproduced tab displacement; the exact historical builder source function is unavailable.
+- **Does not mean:** imposing a candidate-specific style, page count, domain, or logo requirement on future users.
+- **Status:** APPROVED for deterministic/procedural hardening by direct user instruction on 2026-10-01.
+- **Follow-up validation:** run the next three real artifacts through all gates, beginning with a canary for each materially changed path.

@@ -67,6 +67,8 @@ Serious applications use independent recruiter and hiring-manager lenses plus a 
 ## Templates
 Read `canonical/TEMPLATE_REGISTRY.yaml` before artifact build. Preserve a candidate's approved existing format when suitable. Do not force an engineering-specific or universal Career OS design.
 
+A registered document template is a visual and structural baseline. Generated artifacts must preserve its structural semantics, pass a template-derived structural comparison and parser/ATS check, and pass individual-page render inspection. For a new or materially changed template, builder, renderer, or media path, approve one canary before batch production.
+
 ## Learning
 Role families are hypotheses. Label cross-application conclusions `SUPPORTED`, `SUGGESTIVE`, or `UNKNOWN`. Never infer causality from a single rejection, interview, or offer. Material rule changes require a learning proposal, human approval, and preferably regression evidence.
 

@@ -108,6 +108,17 @@ def main() -> int:
         failures.append("TEMPLATES: template registry missing")
     if "TEMPLATE_REGISTRY.yaml" not in text(".agents/skills/artifact-build/SKILL.md"):
         failures.append("TEMPLATES: artifact-build does not consult template registry")
+    registry = text("canonical/TEMPLATE_REGISTRY.yaml")
+    build = text(".agents/skills/artifact-build/SKILL.md").lower()
+    for token in ("structural_fingerprint", "source_sha256", "canary_required_on_change"):
+        if token not in registry:
+            failures.append(f"TEMPLATES: registry lacks {token}")
+    for token in ("structural comparison", "canary", "individual", "contact sheet"):
+        if token not in build:
+            failures.append(f"TEMPLATES: artifact-build lacks {token}")
+    for path in ("scripts/docx_structure.py", "scripts/safe_docx_population.py", "scripts/audit_docx_structure.py", "scripts/test_docx_structure.py", "scripts/verify_artifact_release.py"):
+        if not (ROOT / path).exists():
+            failures.append(f"TEMPLATES: missing portable tool {path}")
 
     if failures:
         print("PORTABLE INVARIANT TESTS: FAIL")
